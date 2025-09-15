@@ -14,19 +14,7 @@ $_SESSION["gameTitle"]=$settings["gameName"];
 require '../../vendor/autoload.php';
 include_once "../s3/s3_functions.php"; // s3 function for easy upload and get signed urls, still need env file and autoload
 
-// if (!$_SESSION['adminId']) {
-//     header('Location:../index.php?save');
-// } 
 
-
-// Check session for onboarding
-if ($_SESSION["onboarding"]) {
-    // Ensure Onboarding link is present in pageLinks
-    $settings['pageLinks']['Onboarding'] = "../../onboarding/admin/stage_events.php";
-} else {
-    // Remove Onboarding link from pageLinks
-    unset($settings['pageLinks']['Onboarding']);
-}
 
 $tabName="Uploads";
 
@@ -138,8 +126,8 @@ $extraFields=unserialize($data["new_fields"]);
             <div class="content-body">
                 <section id="basic-form-layouts">
                     <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <div class="container ">
+                        <div class="col-md-11">
+                            <div class="container-fluid ">
                                 <!-- Tab Navigation -->
                                 <div class="custom-tabs-container ">
                                     <ul class="nav nav-pills custom-tabs justify-content-center">
@@ -147,12 +135,7 @@ $extraFields=unserialize($data["new_fields"]);
                                             <a class="nav-link active" id="tab1" onclick="showCard(1)">1. View
                                                 Uploads</a>
                                         </li>
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link" id="tab2" onclick="showCard(2)">2. Theme Settings</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="tab3" onclick="showCard(3)">3. Add Categories</a>
-                                        </li> -->
+                                     
                                     </ul>
                                 </div>
 
@@ -167,17 +150,8 @@ $extraFields=unserialize($data["new_fields"]);
                                                         <div class="col-md-12">
                                                             <a href="csv-download.php" target="_blank" class="btn btn-sm btn-danger" style="    position: relative;float: right;margin-left:20px;">Download
                                                             Csv</a>
-                                                            <!-- <button class="btn btn-sm btn-danger" id="csv-download"
-                                                                style="    position: relative;float: right;margin-left:20px;">Download
-                                                                Csv
-                                                            </button> -->
-                                                            <button class="btn btn-sm btn-danger" id="allapproved"
-                                                                style="    position: relative;float: right;margin-left:20px;">ALL
-                                                                Approved</button>
-                                                            <button class="btn btn-sm btn-danger" id="alldisapproved"
-                                                                style="    position: relative;float: right;">ALL
-                                                                DisApproved</button>
-
+                                                    
+                                                         
                                                         </div>
                                                     </div>
                                                     <div class="row" style="margin-top:20px;">
@@ -191,70 +165,29 @@ $extraFields=unserialize($data["new_fields"]);
                                                                     <thead>
                                                                         <tr>
                                                                             <th>Name</th>
-                                                                            <th>title</th>
-                                                                            <!-- <th>Media</th> -->
-                                                                            <th>Type</th>
-                                                                            <th>Category</th>
-                                                                            <th>likes</th>
-                                                                            <th>Delete</th>
-                                                                            <th>Disapprove/Approve</th>
-                                                                            <?php 
-                                        foreach($extraFields as $fields){
-                                          echo '<th>'.$fields.'</th>';
-                                        }
-                                        ?>
-                                                                            <th>Timestamp </th>
+                                                                            <th>Stage 1</th>
+                                                                            <th>Stage 2</th>
+                                                                            <th>Stage 3</th>
+                                                                            <th>Score</th>
+                                                                            <th>Points</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <?php 
-                                           $sql="select * from uploads where organizationId='$organizationId' and sessionId='$sessionId' order by id desc";
+                                           $sql="select * from question where organizationId='$organizationId' and sessionId='$sessionId' order by id desc";
                                            $sql=execute_query($sql);
                                            while($get=mysqli_fetch_array($sql)){
-                                            $deleteButton='<a href="'.PAGE_NAME.'?delete_id='.$get["id"].'&delete_table=uploads&fallback='.PAGE_NAME.'"><button class="btn btn-sm btn-danger">Delete</button></a>';
-                                            // if($get["approval"]=="0"){
-                                            //    $approval='<a href="events.php?events=approve&action=1&target='.$get["id"].'"><button class="btn btn-sm btn-danger">Disapproved</button></a>';
-                                            // }else{
-                                            //    $approval='<a href="events.php?events=approve&action=0&target='.$get["id"].'"><button class="btn btn-sm btn-success">Approved</button></a>';
-                                            // }
-                                            if($get["approval"]=="0"){
-                                              $approval='<input type="checkbox" id="switchery2" class="switchery switch-data" data-size="md" current_status="disapprove" current_id='.$get["id"].' '.switchery(false).'/>&nbsp;<span class="data-mention"> Disapproved</span>';
-                                            }else{
-                                              $approval='<input type="checkbox" id="switchery2" class="switchery switch-data" data-size="md" current_status="approve" current_id='.$get["id"].' '.switchery(true).'/>&nbsp;<span class="data-mention"> Approved </span>';
-                                            }
-
-                                            $presignedUrl= possibleOnS3("uploads/",$get["video"])
+                                            
                                             ?>
                                                                     <tr>
 
 
 
                                                                         <td><?php echo $get["name"];?></td>
-                                                                        <td><?php echo $get["business"];?></td>
-                                                                        <!-- <td><div data =<?php echo $presignedUrl;?> type=<?php echo $get["type"];?> class="btn btn-success btn-sm em-color" >Open</div></td> -->
-
-                                                                        <td><?php echo $get["type"];?></td>
-                                                                        <!-- <td><?php echo $get["category"];?></td> -->
-                                                                        <td>
-                                                                            <?php
-                                                            // Assuming $get['category'] contains the category value
-                                                            if ($get["category"] == "OTHER") {
-                                                                echo $get["yoga_name"]; // Display yoga_name if category is 'others'
-                                                            } else {
-                                                                echo $get["category"]; // Otherwise, display the category
-                                                            }
-                                                            ?>
-                                                                        </td>
-
-                                                                        <td><?php echo $get["likes"];?></td>
-                                                                        <td><?php echo $deleteButton; ?></td>
-                                                                        <td><?php echo $approval; ?></td>
-                                                                        <?php 
-                                                $fetchExtra=unserialize($get["extra_fields"]);
-                                                foreach($extraFields as $fields){
-                                                  echo '<td>'.$fetchExtra[$fields].'</td>';
-                                                }
-                                               ?>
-                                                                        <td><?php echo $get["timestamp"];?></td>
+                                                                        <td><?php echo $get["question5"];?></td>
+                                                                       <td><?php echo $get["question1"];?></td>
+                                                                        <td><?php echo $get["question3"];?></td>
+                                                                        <td><?php echo $get["score"];?></td>
+                                                                        <td><?php echo $get["end_time"];?></td>
                                                                     </tr>
 
                                                                     <?php     }  ?>
@@ -305,24 +238,6 @@ $extraFields=unserialize($data["new_fields"]);
         </div>
     </div>
 
-    <!-- <div class="modal" id="rules" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document" style="background-color:white;">
-       
-            <div class="modal-body">
-                <div class="col-sm-11 col-md-11 col-lg-11 col-xs-12 auto" style="margin:auto;float:none;">
-                  <img src="" id="opneimg" style="width:100%"></img>
-
-                </div>
-               
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="ruleclose"
-                        style="text-align:center;border-radius:5px;padding:5px;background-image: linear-gradient(to right, #E25569, #FB9946);color:white;"
-                        data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-     -->
 
 
     <?php include("../../admin_assets/footer.php");?>

@@ -19,7 +19,8 @@
         "time": "02:00"
     },
     "pageLinks": {
-        "Themes": "themes.php"
+        "Themes": "themes.php",
+        "All uploads": "view-uploads.php"
     },
     "themesets": [{
             "background_web": "theme1-web.png",
