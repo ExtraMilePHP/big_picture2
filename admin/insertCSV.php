@@ -13,9 +13,9 @@ class insertCSV
     private $con;
     private $organizationId;
     private $sessionId;
-    private $curruntTheme;
+    private $myThemename;
 
-    public function __construct($filename, $preexist_array, $database_fields, $table_name, $con, $organizationId, $sessionId, $curruntTheme)
+    public function __construct($filename, $preexist_array, $database_fields, $table_name, $con, $organizationId, $sessionId, $myThemename)
     {
         $this->filename = $filename;
         $this->preexist_array = $preexist_array;
@@ -25,35 +25,26 @@ class insertCSV
         $this->con = $con;
         $this->organizationId = $organizationId;
         $this->sessionId = $sessionId;
-        $this->curruntTheme = $curruntTheme;
+        $this->myThemename = $myThemename;
     }
 
     public function run() {
-        $this->con->set_charset("utf8mb4"); // Set charset
         if (in_array($this->filename["type"], $this->csvType)) {
             $this->collectData();
         } else {
             echo "Please use CSV File";
         }
     }
-    
+
     public function collectData() {
         $this->arr = array(array(), array());
         $num = 0;
         $row = 0;
         $handle = fopen($this->filename['tmp_name'], 'r');
-    
+
         if ($handle !== FALSE) {
             while (($data = fgetcsv($handle)) !== FALSE) {
-                // Decode HTML entities and ensure UTF-8 encoding
-                // $encodedData = array_map(function($value) {
-                //     return mb_convert_encoding(html_entity_decode(trim($value), ENT_QUOTES | ENT_HTML5, 'UTF-8'), 'UTF-8');
-                // }, $data);
-                $this->con->set_charset("utf8mb4");
-
-                $encodedData = array_map(function($value) {
-                    return mb_convert_encoding(html_entity_decode(trim($value), ENT_QUOTES | ENT_HTML5, 'UTF-8'), 'UTF-8');
-                }, $data);
+                $encodedData = array_map([$this, 'encodeSpecialCharacters'], $data);
                 $num = count($encodedData);
                 for ($c = 0; $c < $num; $c++) {
                     $this->arr[$row][$c] = $encodedData[$c];
@@ -63,15 +54,11 @@ class insertCSV
             $this->rowAuth();
         }
     }
-    
 
     public function encodeSpecialCharacters($data) {
-        // Convert any HTML entities to their respective characters
-        $data = html_entity_decode($data, ENT_QUOTES, 'UTF-8');
-        // Ensure it's properly encoded to UTF-8
-        return mb_convert_encoding($data, 'UTF-8', 'UTF-8');
+        return htmlentities($data, ENT_QUOTES, 'UTF-8');
     }
-    
+
     public function truncateTable()
     {
         $table_name = $this->table_name;
@@ -113,77 +100,36 @@ class insertCSV
     }
 
     public function insertRows()
-    {
-        $curruntTheme = $this->curruntTheme;
-        $clearField = "DELETE from `" . $this->table_name . "` where themename='$curruntTheme' and sessionId='".$this->sessionId."' and organizationId = '".$this->organizationId."'";
-        $this->con->query($clearField);
-    
-        for ($i = 1; $i < count($this->arr); $i++) {
-            $sql_values = array();
-    
-            for ($l = 0; $l < count($this->preexist_array); $l++) {
-                if ($this->locate_cols[$l] !== null) {
-                    $data = $this->arr[$i][$this->locate_cols[$l]];
-    
-                    // Normalize only the 'category' field
-                    if ($this->preexist_array[$l] === "category") {
-                        $data = $this->normalizeCategory(trim($data));
-                    } else {
-                        // Normalize apostrophes for 'question_name' field
-                        if ($this->preexist_array[$l] === "question_name") {
-                            $data = $this->normalizeApostrophes(trim($data));
-                        }
-                    }
-    
-                    // Log data for debugging (check apostrophes)
-                    error_log("Data for field " . $this->preexist_array[$l] . ": " . $data);
-    
-                    $sql_values[$l] = $data;
-                } else {
-                    $sql_values[$l] = null; // Use NULL for missing values
-                }
-            }
-    
-            // Insert query using prepared statements
-            $placeholders = implode(',', array_fill(0, count($sql_values), '?'));
-            $insert_sql = "INSERT INTO " . $this->table_name . " (organizationId, sessionId, themename, " . implode(', ', $this->database_fields) . ") VALUES (?, ?, ?, " . $placeholders . ")";
-            $stmt = $this->con->prepare($insert_sql);
-    
-            // Bind the parameters dynamically
-            $params = array_merge([$this->organizationId, $this->sessionId, $curruntTheme], $sql_values);
-            $types = str_repeat('s', count($params)); // Assuming all are strings
-            $stmt->bind_param($types, ...$params);
-    
-            if ($stmt->execute()) {
-                $this->fill_match++;
+{
+    $myThemename = $this->myThemename;
+    $clearField = "DELETE from `" . $this->table_name . "` where themename='$myThemename' and sessionId='".$this->sessionId."' and organizationId = '".$this->organizationId."'";
+    $this->con->query($clearField);
+
+    for ($i = 1; $i < count($this->arr); $i++) {
+        $sql_values = array();
+
+        for ($l = 0; $l < count($this->preexist_array); $l++) {
+            if ($this->locate_cols[$l] !== null) {
+                $data = $this->arr[$i][$this->locate_cols[$l]];
+                $sql_values[$l] = trim($data);
+            } else {
+                $sql_values[$l] = "NULL"; // Use NULL if the field is not found
             }
         }
-    
-        $this->result();
+
+        $insert_values = "'" . implode("','", $sql_values) . "'";
+        $organizationId = $this->organizationId;
+        $sessionId = $this->sessionId;
+
+        $sql = "INSERT INTO `" . $this->table_name . "` (organizationId, sessionId, themename, " . implode(', ', $this->database_fields) . ") VALUES ('$organizationId','$sessionId','$myThemename'," . $insert_values . ")";
+
+        if ($this->con->query($sql)) {
+            $this->fill_match++;
+        }
     }
-    
-    public function normalizeApostrophes($data) {
-        $data = str_replace(["’", "`"], "'", $data); // Replace curly and backtick apostrophes
-        return $data;
-    }
 
-
-/**
- * Normalize category names to a consistent format.
- * For example, "warmpup", "warm-up", "warm up" -> "Warm-up"
- */
-public function normalizeCategory($category)
-{
-    $category = strtolower($category); // Convert to lowercase for normalization
-    $replacements = [
-        'warmpup' => 'Warm-up',
-        'warm up' => 'Warm-up',
-        'warm-up' => 'Warm-up',
-    ];
-
-    return $replacements[$category] ?? ucfirst(str_replace(' ', '-', $category));
+    $this->result();
 }
-
 
     public function result()
     {

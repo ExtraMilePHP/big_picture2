@@ -4,7 +4,7 @@
 <head>
     <?php include_once("../seo-head.php"); ?>
     <meta charset="utf-8">
-    <title>Big Picture</title>
+   <title>Big Picture 2.0</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery.min.js"></script>

@@ -90,7 +90,7 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Big Picture</title>
+    <title>Big Picture 2.0</title>
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -108,38 +108,38 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
     }
 
     .btn-login {
-       
+
         width: max-content;
         margin: auto;
         position: relative;
         display: block;
-           color: <?php echo $data["landing_page_button_color"];
+        color: <?php echo $data["landing_page_button_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>
     }
     </style>
- 
+
 </head>
 
 <body class="loginbg">
     <style>
-.score {
-    position: absolute;
-    text-align: right;
-    border: 1px solid #fff;
-    float: right;
-    padding: 4px 11px;
-    border-radius: 10px;
-    font-size: 18px;
-    margin-right: 25px;
-    z-index: 9999999999;
-    margin-top: 20px;
-      color: <?php echo $data["landing_page_title_color"];
+    .score {
+        position: absolute;
+        text-align: right;
+        border: 1px solid #fff;
+        float: right;
+        padding: 4px 11px;
+        border-radius: 10px;
+        font-size: 18px;
+        margin-right: 25px;
+        z-index: 9999999999;
+        margin-top: 20px;
+        color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>
-}
+    }
 
     .timer-back {
         position: absolute;
@@ -153,7 +153,7 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
         margin-left: 30px;
         z-index: 9999999999;
         margin-top: 20px;
-          color: <?php echo $data["landing_page_title_color"];
+        color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>
@@ -205,7 +205,7 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
 
     .mtop1 {
         margin: 10px 0px;
-        text-align:center;
+        text-align: center;
         font-size: 20px;
         color: <?php echo $data["landing_page_title_color"];
         ?>
@@ -213,52 +213,87 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
 
     @media(min-width:100px) and (max-width:720px) {
         .timer-back {
-        position: absolute;
-        font-size: 15px;
-        font-weight: 100 !important;
-      
-        border-radius: 10px;
-        border: 1px solid #ffffff;
-        text-align: center;
-        padding: 5px;
-        width: 97px;
-        margin-left: -22px;
-        z-index: 9999999999;
-        margin-top: 66px;
-          color: <?php echo $data["landing_page_title_color"];
-        ?>;
-        background-color: <?php echo $data["landing_page_button_bgcolor"];
-        ?>
-    }
-    .score {
-        position: absolute;
-        font-size: 14px;
-        font-weight: 100 !important;
-   
-        border-radius: 10px;
-        border: 1px solid #ffffff;
-        padding: 5px;
-        width: 91px;
-        margin-left: 22px;
-        z-index: 9999999999;
-        margin-top: 66px;
-        text-align: right;
-        float: right;
-        padding: 5px 10px;
-          color: <?php echo $data["landing_page_title_color"];
-        ?>;
-        background-color: <?php echo $data["landing_page_button_bgcolor"];
-        ?>
-    }
-       
+            position: absolute;
+            font-size: 15px;
+            font-weight: 100 !important;
+
+            border-radius: 10px;
+            border: 1px solid #ffffff;
+            text-align: center;
+            padding: 5px;
+            width: 97px;
+            margin-left: -22px;
+            z-index: 9999999999;
+            margin-top: 66px;
+            color: <?php echo $data["landing_page_title_color"];
+            ?>;
+            background-color: <?php echo $data["landing_page_button_bgcolor"];
+            ?>
+        }
+
+        .score {
+            position: absolute;
+            font-size: 14px;
+            font-weight: 100 !important;
+
+            border-radius: 10px;
+            border: 1px solid #ffffff;
+            padding: 5px;
+            width: 91px;
+            margin-left: 22px;
+            z-index: 9999999999;
+            margin-top: 66px;
+            text-align: right;
+            float: right;
+            padding: 5px 10px;
+            color: <?php echo $data["landing_page_title_color"];
+            ?>;
+            background-color: <?php echo $data["landing_page_button_bgcolor"];
+            ?>
+        }
+
 
         .mtop1 {
             margin-top: 50px;
             font-size: 15px;
-             text-align:center;
+            text-align: center;
             color: <?php echo $data["landing_page_title_color"];
             ?>
         }
+    }
+
+    @media (min-width: 600px) and (max-width: 1200px) {
+
+        .mtop1 {
+            margin: 10px 0px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        #timer {
+            width: 93px;
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 8px;
+            padding: 5px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        .score {
+            position: absolute;
+            text-align: center;
+            border: 1px solid #fff;
+            float: right;
+            padding: 4px 11px;
+            border-radius: 10px;
+            font-size: 12px;
+            z-index: 9999999999;
+            margin-top: 7px;
+            left: 76px;
+            width: 91px;
+        }
+
     }
     </style>
     <?php include("../actions-default.php");
@@ -288,7 +323,7 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
                 <div class="row">
                     <div class="col-sm-9 col-md-9 col-lg-9 col-xs-12 auto">
                         <div class="col-sm-3 col-md-3 col-lg-3 col-xs-8 auto">
-                              <img src="img/chall2.png" class="" alt="" style="width:100%;">
+                            <img src="img/chall2.png" class="" alt="" style="width:100%;">
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 mtop1">
                             <?php echo htmlspecialchars($data["landing_page_title2"], ENT_QUOTES, 'UTF-8'); ?>
@@ -329,7 +364,7 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
     </div>
 
     <script>
-          var points = parseInt("<?php echo $score ?>");
+    var points = parseInt("<?php echo $score ?>");
     var target,
         seconds = <?php echo $seconds ?>,
         minutes = <?php echo $minutes; ?>,
@@ -355,7 +390,7 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
         timer();
     }
     var organizationId = "<?php echo $organizationId ?>";
-  
+
     function timer() {
         t = setTimeout(add, 1000);
     }
@@ -407,7 +442,7 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
                 success: function(data) {
                     console.log(data.trim());
                     if (data.trim() === "true") {
-                       window.location = "think-closer.php";
+                        window.location = "think-closer.php";
                     }
                 }
             });

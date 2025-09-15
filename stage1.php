@@ -166,24 +166,23 @@ if(!empty($question5) ){
 
 <head>
     <meta charset="utf-8">
-  <title>Big Picture</title>
-       <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Big Picture 2.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link href="css/games-global.css?v=1" rel="stylesheet">
- <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
 
     <style>
-  
     .auto {
         margin: auto;
         float: none;
     }
 
     body {
-              background: url(<?php echo possibleOnS3("uploads/", $data["background_desk"]) ?>);
+        background: url(<?php echo possibleOnS3("uploads/", $data["background_desk"]) ?>);
         margin: 0px;
         padding: 0px;
         background-size: 100% 100%;
@@ -207,10 +206,10 @@ if(!empty($question5) ){
     }
 
     .button-submit {
-              width: max-content;
+        width: max-content;
         margin: auto;
         position: relative;
-           color: <?php echo $data["landing_page_button_color"];
+        color: <?php echo $data["landing_page_button_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>
@@ -229,22 +228,24 @@ if(!empty($question5) ){
         ?>;
         width: 100%;
     }
-.score {
-    position: absolute;
-    text-align: right;
-    border: 1px solid #fff;
-    float: right;
-    padding: 4px 11px;
-    border-radius: 10px;
-    font-size: 18px;
-    z-index: 9999999999;
-    margin-top: 20px;
-      color: <?php echo $data["landing_page_title_color"];
+
+    .score {
+        position: absolute;
+        text-align: center;
+        border: 1px solid #fff;
+        float: right;
+        padding: 4px 11px;
+        border-radius: 10px;
+        font-size: 18px;
+        z-index: 9999999999;
+        margin-top: 20px;
+        color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>;
-        left: 123px;
-}
+        left: 71px;
+        width: 120px;
+    }
 
     .timer-back {
         position: absolute;
@@ -258,11 +259,12 @@ if(!empty($question5) ){
         margin-left: 30px;
         z-index: 9999999999;
         margin-top: 20px;
-          color: <?php echo $data["landing_page_title_color"];
+        color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>
     }
+
     #timer {
         width: 150px;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -342,7 +344,7 @@ if(!empty($question5) ){
     .unscramble-input {
         display: flex;
         align-items: center;
-        border: 1px  solid ;
+        border: 1px solid;
     }
 
     .custom-icon {
@@ -507,7 +509,7 @@ if(!empty($question5) ){
     }
 
     .yellow-input {
-       border: 1px solid !important;
+        border: 1px solid !important;
         border: none;
         border-radius: 0;
         height: 35px;
@@ -538,10 +540,11 @@ if(!empty($question5) ){
     .myDiv {
         width: 48%;
     }
+
     .mtop1 {
-            margin: 10px 0px;
-    font-size: 20px;
-    text-align: center;
+        margin: 10px 0px;
+        font-size: 20px;
+        text-align: center;
         color: <?php echo $data["landing_page_title_color"];
         ?>
     }
@@ -549,22 +552,23 @@ if(!empty($question5) ){
     @media (max-width:768px) {
         body {
             background: url(<?php echo possibleOnS3("uploads/", $data["background_mob"]) ?>);
-        /* background: url(../img/bg.jpg); */
-        margin: 0px;
-        padding: 0px;
-        background-size: 100% 100%;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
+            /* background: url(../img/bg.jpg); */
+            margin: 0px;
+            padding: 0px;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
- .mtop1 {
+
+        .mtop1 {
             margin-top: 71px;
-        font-size: 22px;
-        text-align: center;
+            font-size: 22px;
+            text-align: center;
             color: <?php echo $data["landing_page_title_color"];
             ?>
         }
 
-   
+
         .desk {
             display: none;
         }
@@ -600,7 +604,7 @@ if(!empty($question5) ){
             margin: 0 auto;
             border-radius: 8px;
             padding: 5px;
-                  margin-top: 77px;
+            margin-top: 77px;
             border: 1px solid white;
             margin-right: 50px;
         }
@@ -613,7 +617,7 @@ if(!empty($question5) ){
             font-size: 18px;
             padding: 5px;
             text-align: center;
-                   margin-top: 77px;
+            margin-top: 77px;
             color: <?php echo $data["landing_page_title_color"];
             ?>;
             left: 15px;
@@ -649,6 +653,63 @@ if(!empty($question5) ){
 
 
     }
+
+    @media (min-width: 600px) and (max-width: 1200px) {
+
+        .mtop1 {
+            margin: 10px 0px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .get-answer:not(:last-child) {
+            margin-bottom: -4px;
+        }
+
+        .yellow-input {
+            border: 1px solid !important;
+            border: none;
+            border-radius: 0;
+            height: 27px;
+        }
+
+        .question-label {
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .myDiv {
+            width: 45%;
+        }
+
+        #timer {
+    width: 93px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.score {
+    position: absolute;
+    text-align: center;
+    border: 1px solid #fff;
+    float: right;
+    padding: 4px 11px;
+    border-radius: 10px;
+       font-size: 12px;
+    z-index: 9999999999;
+    margin-top: 7px;
+    left: 76px;
+    width: 91px;
+}
+
+.button-submit {
+    top: 18px;
+}
+    }
     </style>
 </head>
 
@@ -660,7 +721,7 @@ if(!empty($question5) ){
     
     ?>
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
         <div class="container-fluid mob-margin" style="margin-top:10px;">
             <div class="row ">
@@ -685,7 +746,7 @@ if(!empty($question5) ){
                 <div class="row">
                     <div class="col-sm-9 col-md-9 col-lg-9 col-xs-12 auto">
                         <div class="col-sm-3 col-md-3 col-lg-3 col-xs-8 auto">
-                              <img src="img/chall1.png" class="" alt="" style="width:100%;">
+                            <img src="img/chall1.png" class="" alt="" style="width:100%;">
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 mtop1">
                             <?php echo htmlspecialchars($data["landing_page_title1"], ENT_QUOTES, 'UTF-8'); ?>
@@ -697,7 +758,8 @@ if(!empty($question5) ){
         <div id="popup-container" class="correct-popup" style="display: none;">
             <?php if (!empty($data["Correct_ans_img_popup"])): ?>
             <!-- Show image popup if puzzle_image is not empty -->
-            <img id="popup-image" src="<?php echo possibleOnS3("uploads/", $data["Correct_ans_img_popup"]); ?>" alt="Success">
+            <img id="popup-image" src="<?php echo possibleOnS3("uploads/", $data["Correct_ans_img_popup"]); ?>"
+                alt="Success">
             <?php elseif (!empty($data["Correct_ans_text_popup"])): ?>
             <!-- Show text popup if puzzle_image is empty and Correct_ans_text_popup is not empty -->
             <textarea readonly id="Correct_ans_text_popup"
@@ -954,12 +1016,12 @@ if(!empty($question5) ){
                 timer: target
             },
             success: function(data) {
-                console.log("response check----",data.trim());
+                console.log("response check----", data.trim());
                 if (sessionId == "demobypass") {
                     swal("Subscribe to any PLAN to play with your peers.", "", "success").then(() => {
                         window.location = "<?php echo $base_url ?>/plans";
                     });
-                } else  if (data.trim() === "true") {
+                } else if (data.trim() === "true") {
                     window.location = "think-fast.php";
                 } else {
                     // handle other cases

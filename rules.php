@@ -36,7 +36,7 @@ include_once 'admin/process-questions1.php';
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Big Picture</title>
+    <title>Big Picture 2.0</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -274,7 +274,7 @@ include_once 'admin/process-questions1.php';
     </div>
     <div class="container-fluid" style="margin-top:30px;">
         <div class="row">
-            <div class="col-sm-1 col-md-1 col-lg-1 col-xs-6 auto">
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xs-6 auto">
                 <h3 class="gradient-button">Rules</h3>
             </div>
 

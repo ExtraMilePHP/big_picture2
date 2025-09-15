@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Big Picture</title>
+   <title>Big Picture 2.0</title>
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -298,6 +298,48 @@ if(isset($question3)){
             color: <?php echo $data["landing_page_title_color"];
             ?>
         }
+    }
+
+      @media (min-width: 600px) and (max-width: 1200px) {
+
+        .mtop1 {
+            margin: 10px 0px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        #timer {
+            width: 93px;
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 8px;
+            padding: 5px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        .score {
+            position: absolute;
+            text-align: center;
+            border: 1px solid #fff;
+            float: right;
+            padding: 4px 11px;
+            border-radius: 10px;
+            font-size: 12px;
+            z-index: 9999999999;
+            margin-top: 7px;
+            left: 76px;
+            width: 91px;
+        }
+.details {
+   font-size: 17px !important;
+}
+.details-1 {
+    font-size: 17px;
+}
+.details-2 {
+    font-size: 15px;
+}
     }
     </style>
     <div class="container-fluid">

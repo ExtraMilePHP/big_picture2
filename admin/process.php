@@ -19,6 +19,4 @@ require_once("insertCSV.php");
 $insertCSV=new insertCSV($filename,$preexist_array,$database_fields,$table_name,$con,$organizationId,$sessionId,$curruntTheme);
 $insertCSV->run();
 
-
-
 ?>

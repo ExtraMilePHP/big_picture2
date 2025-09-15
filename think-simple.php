@@ -87,7 +87,7 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Big Picture</title>
+   <title>Big Picture 2.0</title>
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">

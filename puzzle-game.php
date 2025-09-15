@@ -509,6 +509,42 @@ $stage = 4;
             ?>
         }
     }
+
+      @media (min-width: 600px) and (max-width: 1200px) {
+
+        .mtop1 {
+            margin: 10px 0px;
+            font-size: 14px;
+            text-align: center;
+        }
+    .mainHead {
+        font-size: 15px;
+    }
+        #timer {
+            width: 93px;
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 8px;
+            padding: 5px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        .score {
+            position: absolute;
+            text-align: center;
+            border: 1px solid #fff;
+            float: right;
+            padding: 4px 11px;
+            border-radius: 10px;
+            font-size: 12px;
+            z-index: 9999999999;
+            margin-top: 7px;
+            left: 76px;
+            width: 91px;
+        }
+
+    }
     </style>
 </head>
 
@@ -703,7 +739,10 @@ $stage = 4;
                 success: function(data) {
                     console.log(data.trim());
                     if (data.trim() === "true") {
-                        window.location = "thankyou.php";
+                      //  window.location = "thankyou.php";
+                         setTimeout(function() {
+                    window.location = "thankyou.php";
+                }, 10000);
                     }
                 }
             });

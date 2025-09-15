@@ -407,8 +407,8 @@ $total_q = $getAllQuestion;
                                 </div>
                                 <p class="text-muted mt-2">
                                     <code>* Questions will be overwritten.<br>* Use only CSV files.<br>* Whitespace will be removed automatically. <br>
-                                    * When uploading the CSV, the upload format should have only 2 or 4 options for the answers.<br>
-                                    * Before uploading, check the sample CSV file for the correct format.     </code>
+                                    * When uploading the CSV, the upload format should have only questions.<br>
+                                    * Before uploading, check the sample CSV file for the correct format.  </code>
                                 </p>
 
                               <div class="progress" style="display:none; margin-top:10px;">
@@ -427,9 +427,9 @@ $total_q = $getAllQuestion;
                     </div>
 
                     <!-- Modal footer -->
-                    <div class="modal-footer">
+                    <!-- <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -693,7 +693,11 @@ $total_q = $getAllQuestion;
     }
 
 
-
+function normalizeQuotes($string) {
+    $search  = ["“", "”", "‘", "’"];
+    $replace = ['"', '"', "'", "'"];
+    return str_replace($search, $replace, $string);
+}
     var myform_two = document.querySelector('#myformTwo');
     var inputfile_two = document.querySelector('#fileTwo');
 var bar_two = document.getElementsByClassName("progress-bar")[0];
