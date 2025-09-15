@@ -742,7 +742,7 @@ $stage = 4;
                       //  window.location = "thankyou.php";
                          setTimeout(function() {
                     window.location = "thankyou.php";
-                }, 10000);
+                }, 5000);
                     }
                 }
             });
