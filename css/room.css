@@ -1,0 +1,439 @@
+
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('../fonts/Poppins-SemiBold.ttf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+div#timer {
+    font-size: 20px;
+    color: white;
+}
+.full-screen{
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    height: 100vh;
+    font-size: 20px;
+    text-align: center;
+    color:black;
+    font-size:18px;
+    z-index: 999;
+    background: white;
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display:none;
+}
+div#scoreid {
+    font-size: 20px;
+    text-align: right;
+    color: white;
+}
+body {
+    font-family: 'Poppins-SemiBold';
+}
+body {background:none transparent;
+    border:none;
+}
+.swal-button{
+background-color: #905133 !important;
+}
+
+
+@media screen and (min-width: 768px) {
+    .title{
+        text-transform: uppercase;
+        color:white;
+        font-weight:bolder;
+        font-size: 20px;
+        text-align: center;
+        /* width: 730px; */
+        margin: auto;
+        line-height: 1.2;
+        margin-bottom:10px;
+
+    }
+    #hintid{
+        position: relative;
+        /* width: 83%; */
+        /* top: -90px; */
+    }
+    .desk{
+        display:block;
+    }
+    .mob{
+        display:none;
+    }
+    .swal-title {
+        font-size: 22px;
+    }
+    .game-title1 {
+        margin-top: 45px;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .title{
+        text-transform: uppercase;
+        color:white;
+        font-weight:bolder;
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+
+    }
+ 
+    .desk{
+        display:none;
+    }
+    .mob{
+        display:block;
+    }
+
+    .game-title1 {
+        margin-bottom: 20px;
+    }
+    .box {
+        margin-bottom: 20px;
+    }
+}
+
+.back-holder{
+    border-left: 3px solid white !important;
+}
+    .upperaction {
+    margin-top:10px !important;
+    margin-bottom:5px !important;
+}.auto {
+    margin: 0 auto;
+    float: none;
+}
+.custom-popup {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    font-size: 20px;
+    text-align: center;
+    z-index: 999;
+    background: #00000070;
+    display: none;
+}
+
+.popup-top {
+    /* background: white; */
+    height: auto;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 60%;
+    padding: 50px 0px;
+    color: white;
+    border-radius: 20px;
+    /* padding-bottom: 80px; */
+    padding-top: 10px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: -300px;
+    transition: 1s all;
+    position: relative;
+}
+.stage-data{
+    font-size: 29px;
+    color: black;
+    background: #ffd800;
+    position: absolute;
+    width: max-content;
+    padding: 5px 27px;
+    text-align: center;
+    position: absolute;
+    top: -23px;
+    left: 0px;
+    border-radius: 25px;
+    right: 0px;
+    margin: 0 auto;
+    font-weight: bolder;
+}
+
+.popup-top .special {
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+.popup-footer {
+    text-align: center;
+}
+
+.popup-next {
+    background: black;
+    padding: 8px 20px;
+    padding-bottom: 3px;
+    font-size: 18px;
+    color: white;
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.popup-retry {
+    background: black;
+    padding: 8px 20px;
+    padding-bottom: 3px;
+    font-size: 18px;
+    color: white;
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.popup-content {
+    margin-top: 24px;
+    font-size: 25px;
+    padding: 0px 20px;
+    font-weight: bolder;
+}
+
+.next{
+    font-size: 25px;
+    color: white;
+    /* background: black; */
+    position: absolute;
+    width: max-content;
+    padding: 5px 27px;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 9px;
+    right: 0px;
+    margin: 0 auto;
+    font-weight: bolder;
+    cursor:pointer;
+}
+
+.popup-gif{
+    width: 440px;
+position: absolute;
+margin: 0;
+top: 28%;
+margin: 0 auto;
+left: 0px;
+left: 0;
+right: 0;
+display:none;
+}
+
+.question{
+    cursor:pointer;
+}
+.unscramble-answer{
+    font-size: 18px;
+    padding: 5px 10px;
+    width: 80%;
+}
+.q-data{
+    font-size: 18px;
+    font-weight: bolder;
+    padding-top: 10px;
+}
+.question-container{
+    margin-top:15px;
+}
+.submit-scramble{
+    width: max-content;
+    font-size: 23px;
+    background: #5800fa;
+    padding: 5px 22px;
+    border-radius: 5px;
+    margin: 0 auto;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.upperaction{
+    z-index: 999;
+    margin-top: 10px;
+    
+}
+
+.modal-lg{
+    width:620px;
+}
+.modal-title{
+    text-align: center;
+    padding-left: 0px;
+    padding-top: 0px;
+    margin-top: -5px;
+}
+.question-container{
+    /* font-family: 'Chilet'; */
+}
+.q-data{
+    font-size: 16px;
+}
+.unscramble-answer{
+    border: 2px solid #fab234;
+    width:75%;
+}
+.modal-header{
+    border:none;
+}
+/* .modal-content{
+    background-image: url(../images/unscramble_bg.png?v=1);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: unset;
+    box-shadow: unset;
+    background-size: 100%;
+    height: 456px;
+} */
+.handle-display{
+    width: 188px;
+    background: #515151;
+    color:white;
+    height: 33px;
+    margin: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align:center;
+}
+.show-options{
+    margin-top:-170px;
+    display: none;
+}
+.skip-button{
+    width: max-content;
+    font-size: 17px;
+    border-radius: 10px;
+    padding: 5px 20px;
+    background: black;
+    margin-left: 20px;
+    color: white;
+    display: inline-block;
+    cursor:pointer;
+}
+.question-container:nth-child(1){
+    margin-top:50px;
+}
+.upsdownans{
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 2px solid black;
+    width:300px;
+    text-align: center;
+    border-radius: 10px;
+}
+.submit-name{
+    width: max-content;
+    font-size: 23px;
+    /* background: #5800fa; */
+    padding: 5px 22px;
+    border-radius: 5px;
+    margin: 0 auto;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+
+}
+.show-name{
+    margin-top:100px;
+}
+.full-screen{
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    height: 100vh;
+    font-size: 20px;
+    text-align: center;
+    color:black;
+    font-size:18px;
+    z-index: 999;
+    background: white;
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display:none;
+}
+@media (min-width:600px) and (max-width:830px) {
+    .handle-display{
+        width: 90px;
+        height: 19px;
+        margin: 5px 2px;
+        font-size:8px;
+    }
+    .skip-button{
+        font-size: 9px;
+        padding: 5px 17px;
+        margin-left: 10px;
+    }
+    .show-options{
+        margin-top: -105px;
+    }
+    .popup-gif{
+    width:180px;
+    }
+    .modal-body{
+        overflow: scroll;
+    }
+    .modal-title{
+        padding-left: 15px;
+        font-size: 19px !important;
+    }
+    .modal-lg{
+        width: 500px;
+        margin: 0 auto;
+    }
+    
+    .popup-content{
+        font-size:20px;
+        margin-top:20px;
+    }
+    .stage-data{
+        font-size:19px;
+        top:-10px;
+    }
+    .next{
+        font-size:19px;
+        /* bottom:-41px; */
+    }
+    .popup-top{
+        width:80%;
+    }
+    .extramileplay-logo{
+        width:135px !important;
+    }
+    .back-default{
+        font-size:12px !important;
+    }
+    .upperaction{
+        margin-top:0px !important;
+    }
+    .question-container:nth-child(1){
+        margin-top:8px;
+    }
+    .question-container{
+        margin-top:2px;
+    }
+    .unscramble-answer{
+        font-size:11px;
+    }
+    .show-name{
+        margin-top:50px;
+    }
+    svg{
+        /* width:580px; */
+        margin:0 auto;
+    }
+}
+

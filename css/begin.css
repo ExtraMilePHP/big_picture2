@@ -1,0 +1,161 @@
+    #video1 {
+            width: 100%;
+        }
+
+        .bg {
+            background-color: black;
+        }
+
+        #stall1 {
+            display: none;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        .row {
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+        }
+
+        @media(max-width: 767px) {
+
+            span.username,
+            span.userpoint {
+                font-size: 12px !important;
+            }
+
+            .bg-btn {
+                position: absolute;
+                bottom: 6%;
+                left: 40%;
+                width: 20%;
+            }
+
+            .videomute {
+                width: 36px;
+                cursor: pointer;
+            }
+
+            .videopause,
+            .play {
+                width: 44px;
+                cursor: pointer;
+            }
+
+            .mobilehide.tablethide {
+                display: flex;
+                width: 95px;
+                float: left;
+                /* margin-top: -50px; */
+                position: absolute;
+                z-index: 999;
+                margin-left: 10px;
+                top: 10px;
+                z-index: 9999;
+
+            }
+
+            .content {
+                position: absolute;
+                width: 98%;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translateX(-50%) translateY(-50%);
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                padding: 0px;
+                height: auto;
+            }
+            .bg{
+                overflow: scroll;
+                background-image: url(../img/inclusionbg.jpg);
+                background-repeat: repeat;
+            }
+
+        }
+
+        @media(min-width: 767px) {
+
+            .bg-btn {
+                position: absolute;
+                bottom: 14%;
+                left: 44%;
+                width: 12%;
+            }
+            .content {
+                position: absolute;
+                width: 98%;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translateX(-50%) translateY(-50%);
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                padding: 0px;
+                height: auto;
+            }
+            .bg{
+                width:100%;
+                overflow: hidden;
+                background-color: white;
+                background-image: url(../img/inclusionbg.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+
+            .desk2 {
+                display: block;
+                position: absolute;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+
+            }
+
+            .videomute {
+
+                cursor: pointer;
+            }
+
+            .videopause,
+            .play {
+
+                cursor: pointer;
+            }
+
+
+        }
+
+        .container-fluid {
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+        }
+
+
+        .formdata {
+
+            position: absolute;
+            width: 100%;
+            z-index: 9999;
+            /* top: -10px; */
+        }
+
+        #rules,
+        .rulesbtn {
+            display: none;
+        }
+
+        .container-fluid.upperaction {
+            position: relative;
+            top: 0px;
+            margin-top: 0px !important;
+            padding-top: 10px;
+            z-index: 9999999999;
+        }
+
+        .homepage1,
+        #beginplay1 {
+            display: none;
+        }

@@ -1,0 +1,369 @@
+.theme-container {
+    display: grid;
+    grid-template-columns: 70% 25%;
+    gap: 2%;
+    /* Optional: Add some space between the columns */
+}
+
+.theme-card {
+    height: 230px;
+    width: 156px;
+    flex: 1 0 12%;
+    border-radius: 10px;
+    background: #f8f8f8;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: 1s all;
+    border: 0.5px solid gray;
+    min-width: 130px;
+    max-width: 138px;
+}
+
+.theme-card:hover {
+    box-shadow: 5px 5px 5px #0000007a;
+    left: -2px;
+}
+
+.theme-card .theme-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.theme-select {
+    position: absolute;
+    top: 5px;
+    right: -9px;
+    background: #18ae18;
+    width: 30px;
+    height: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.theme-delete {
+    /* position: absolute; */
+    /* top: 5px; */
+    /* left: 10px; */
+    background: #00000045;
+    width: 36px;
+    height: 36px;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.theme-delete:hover {
+    color: red;
+}
+
+.select-theme-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.create-theme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.create-icon {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.icon-container {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: right;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.setting-icon {
+    background: #00000045;
+    width: 36px;
+    height: 36px;
+    color: white;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-icon {
+    background: #00000045;
+    width: 36px;
+    height: 36px;
+    color: white;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.setting-icon:hover {
+    transform: rotate(45deg);
+}
+
+.photo-icon:hover {
+    transform: rotate(20deg);
+}
+
+.build-new-theme .title {
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.build-new-theme {
+    display: none;
+}
+
+.file-upload-wrapper {
+    display: inline-block;
+    position: relative;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.file-upload-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background-color: white;
+    color: #A8A8A8;
+    ;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 0.5px solid #d1d1d1;
+}
+
+.file-upload-button i {
+    background: transparent;
+    color: #d73333;
+    padding: 8px;
+    border-radius: 7px;
+    border: 2px solid;
+}
+
+.file-upload-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.file-upload-text {
+    margin-right: 10px;
+    width: 85%;
+}
+
+.info-icon {
+    font-size: 30px;
+    color: #555;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    right: -47px;
+}
+
+.tooltip-container {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    right: 8px;
+    /* bottom: 100%; */
+    width: max-content;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    z-index: 1;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.tooltip-container:hover>.tooltip {
+    display: block;
+}
+
+.tooltip-container-update {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    display: flex;
+    align-items: start;
+    /* background: white; */
+    /* width: max-content; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.tooltip-update {
+    display: none;
+    position: absolute;
+    right: -100px;
+    /* bottom: 100%; */
+    width: max-content;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    z-index: 1;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.info-icon-update {
+    font-size: 30px;
+    color: #555;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    left: 0px;
+    background: white;
+    border-radius: 50%;
+}
+
+.tooltip-container-update:hover>.tooltip-update {
+    display: block;
+}
+
+.button-create-theme {
+    font-size: 13px;
+    background: #ff4c1d;
+    color: white;
+    padding: 8px 15px;
+    width: max-content;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 1s all;
+}
+
+.button-create-theme:hover {
+    background: black;
+}
+
+.image-container {
+    height: 220px;
+    background-size: cover;
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0 0 0 / 55%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+
+/* .image-container:hover .overlay {
+  opacity: 1;
+} */
+
+.upload-button {
+    background-color: white;
+    padding: 3px 13px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 10;
+}
+
+.image-container input {
+    display: none;
+}
+
+.type-vertical {
+    width: 150px;
+}
+
+.type-square {
+    width: 200px;
+    height: auto;
+}
+
+.type-horizontal {
+    width: 230px;
+    height: 145px;
+}
+
+.container-background-image {
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:100px) and (max-width:720px) {
+    .theme-container {
+        grid-template-columns: 1fr;
+    }
+}
