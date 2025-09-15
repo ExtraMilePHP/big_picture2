@@ -342,6 +342,7 @@ if(!empty($question5) ){
     .unscramble-input {
         display: flex;
         align-items: center;
+        border: 1px  solid ;
     }
 
     .custom-icon {
@@ -506,7 +507,7 @@ if(!empty($question5) ){
     }
 
     .yellow-input {
-
+       border: 1px solid !important;
         border: none;
         border-radius: 0;
         height: 35px;
