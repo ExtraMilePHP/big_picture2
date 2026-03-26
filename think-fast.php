@@ -299,7 +299,6 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
     <?php include("../actions-default.php");
     back("rules.php"); ?>
     <div class="container-fluid">
-
         <div class="container-fluid mob-margin" style="margin-top:10px;">
             <div class="row ">
                 <div class="col-sm-4 col-md-4 col-lg-4 col-xs-8" style="display:inline-flex; ">

@@ -211,7 +211,15 @@ if(isset($question3)){
 
     }
 
-
+.details {
+   font-size: 15px !important;
+}
+.details-1 {
+    font-size: 15px;
+}
+.details-2 {
+    font-size: 15px;
+}
     .loginbg1 {
         background: url(<?php echo possibleOnS3("uploads/", $data["background_mob"]) ?>);
         /* background: url(../img/bg.jpg); */
@@ -343,7 +351,6 @@ if(isset($question3)){
     }
     </style>
     <div class="container-fluid">
-
         <div class="container-fluid mob-margin" style="margin-top:10px;">
             <div class="row ">
                 <div class="col-sm-4 col-md-4 col-lg-4 col-xs-8" style="display:inline-flex; ">

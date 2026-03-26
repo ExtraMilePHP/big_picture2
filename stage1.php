@@ -232,7 +232,7 @@ if(!empty($question5) ){
     .score {
         position: absolute;
         text-align: center;
-        border: 1px solid #fff;
+        /* border: 1px solid #fff; */
         float: right;
         padding: 4px 11px;
         border-radius: 10px;
@@ -252,7 +252,7 @@ if(!empty($question5) ){
         font-size: 18px;
         font-weight: 100 !important;
         border-radius: 10px;
-        border: 1px solid #ffffff;
+        /* border: 1px solid #ffffff; */
         text-align: center;
         padding: 5px;
         width: 120px;
@@ -265,7 +265,7 @@ if(!empty($question5) ){
         ?>
     }
 
-    #timer {
+    /* #timer {
         width: 150px;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>;
@@ -277,7 +277,7 @@ if(!empty($question5) ){
         padding: 5px;
         margin-top: 10px;
         font-size: 18px;
-    }
+    } */
 
     .correct-answer {
         background-color: green !important;
@@ -562,7 +562,7 @@ if(!empty($question5) ){
 
         .mtop1 {
             margin-top: 71px;
-            font-size: 22px;
+       font-size: 15px;
             text-align: center;
             color: <?php echo $data["landing_page_title_color"];
             ?>
@@ -594,7 +594,7 @@ if(!empty($question5) ){
             margin-top: 22px;
         }
 
-        #timer {
+        /* #timer {
             width: 135px;
             background-color: <?php echo $data["landing_page_button_bgcolor"];
             ?>;
@@ -607,7 +607,8 @@ if(!empty($question5) ){
             margin-top: 77px;
             border: 1px solid white;
             margin-right: 50px;
-        }
+            z-index: 99999;
+        } */
 
         .score {
             background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -620,6 +621,8 @@ if(!empty($question5) ){
             margin-top: 77px;
             color: <?php echo $data["landing_page_title_color"];
             ?>;
+            z-index: 99999;
+
             left: 15px;
         }
 
@@ -640,21 +643,49 @@ if(!empty($question5) ){
         }
 
         .myDiv {
-            width: 45%;
+            width: 100%;
+            max-width: 100%;
         }
 
+
+        .modal-body {
+font-size: 14px;
+}
         .main-css {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
             width: 100%;
-            gap: 5px;
-            flex-wrap: wrap;
+            gap: 16px;
+            flex-wrap: nowrap;
+        }
+
+        .myDiv > .w-100 {
+            flex-direction: column;
+            align-items: stretch !important;
+        }
+
+        .myDiv .question-label {
+            margin-right: 0 !important;
+            margin-bottom: 8px;
+            width: 100% !important;
+        }
+
+        .myDiv .custom-icon {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .myDiv .input-group .form-control,
+        .myDiv .get-answer {
+            max-width: none;
         }
 
 
     }
 
-    @media (min-width: 600px) and (max-width: 1200px) {
+    @media (min-width: 769px) and (max-width: 1200px) {
 
         .mtop1 {
             margin: 10px 0px;
@@ -682,7 +713,7 @@ if(!empty($question5) ){
             width: 45%;
         }
 
-        #timer {
+        /* #timer {
     width: 93px;
     text-align: center;
     margin: 0 auto;
@@ -690,12 +721,12 @@ if(!empty($question5) ){
     padding: 5px;
     margin-top: 10px;
     font-size: 12px;
-}
+} */
 
 .score {
     position: absolute;
     text-align: center;
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     float: right;
     padding: 4px 11px;
     border-radius: 10px;
@@ -710,6 +741,49 @@ if(!empty($question5) ){
     top: 18px;
 }
     }
+
+     @media(min-width:100px) and (max-width:720px) {
+        .timer-back {
+            position: absolute;
+            font-size: 15px;
+            font-weight: 100 !important;
+
+            border-radius: 10px;
+            /* border: 1px solid #ffffff; */
+            text-align: center;
+            padding: 5px;
+            width: 97px;
+            margin-left: -22px;
+            z-index: 9999999999;
+            margin-top: 66px;
+            z-index: 999;
+            color: <?php echo $data["landing_page_title_color"];
+            ?>;
+            background-color: <?php echo $data["landing_page_button_bgcolor"];
+            ?>
+        }
+
+        .score {
+            position: absolute;
+            font-size: 14px;
+            font-weight: 100 !important;
+
+            border-radius: 10px;
+            /* border: 1px solid #ffffff; */
+            padding: 5px;
+            width: 91px;
+            margin-left: 22px;
+            z-index: 9999999999;
+            margin-top: 66px;
+            text-align: right;
+            z-index: 999;
+            float: right;
+            padding: 5px 10px;
+            color: <?php echo $data["landing_page_title_color"];
+            ?>;
+            background-color: <?php echo $data["landing_page_button_bgcolor"];
+            ?>
+        }}
     </style>
 </head>
 
@@ -737,6 +811,7 @@ if(!empty($question5) ){
         </div>
     </div>
 
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-2 col-md-2 col-lg-2 col-xs-12">
@@ -794,11 +869,6 @@ if(!empty($question5) ){
             <div class="row">
                 <div class="main-css">
                     <?php for ($i = 0; $i < $totalQuestions; $i++): ?>
-                    <?php if ($i % 2 === 0): ?>
-                    <!-- Start new row every two questions -->
-                    <div class="w-100 d-block d-md-none"></div>
-                    <?php endif; ?>
-
                     <div class="myDiv d-flex align-items-center">
                         <div class="w-100 d-flex align-items-center">
                             <div class="question-label me-2" style="">
@@ -829,7 +899,7 @@ if(!empty($question5) ){
             <div class="modal-dialog modal-lg">
                 <div class="modal-content hint" style="">
                     <div class="modal-body scroll-bar">
-                        <div class="modal-body" id="clueContent" style="font-size: 25px;">
+                        <div class="modal-body" id="clueContent" >
 
                         </div>
                         <div class="modal-footer" style=" border:none;">

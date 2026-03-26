@@ -263,10 +263,11 @@ $stage = 4;
             font-weight: bold;
             text-align: center;
             color: <?php echo $data["landing_page_title_color"];
-            ?>
+            ?>;
+                    margin-top: 30px;
         }
 
-
+        
     }
 
     .custom-popup {
@@ -473,7 +474,7 @@ $stage = 4;
             width: 101px;
             margin-left: -4px;
             z-index: 9999999999;
-            margin-top: 14px;
+            margin-top: 45px;
             color: <?php echo $data["landing_page_title_color"];
             ?>;
             background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -491,7 +492,7 @@ $stage = 4;
             width: 88px;
             margin-left: 18px;
             z-index: 9999999999;
-            margin-top: 14px;
+            margin-top: 45px;
             text-align: right;
             float: right;
             padding: 5px 10px;
