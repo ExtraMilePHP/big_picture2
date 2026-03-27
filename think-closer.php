@@ -103,42 +103,40 @@ if(isset($question3)){
     <?php include("../actions-default.php");
     back("think-simple.php"); ?>
     <style>
-    .score {
-        position: absolute;
-        text-align: right;
-        border: 1px solid #fff;
+   .score {
+        position: relative;
+        text-align: center;
         float: right;
-        padding: 6px 11px;
+        padding: 7px;
+
         border-radius: 10px;
         font-size: 18px;
-
-        background-image: none !important;
-        margin-right: 12px;
         z-index: 9999999999;
-        margin-top: 20px;
         color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
-        ?>
+        ?>;
+        width: max-content;
     }
 
     .timer-back {
-        position: absolute;
-        font-size: 18px;
-        font-weight: 100 !important;
-        border-radius: 10px;
-        border: 1px solid #ffffff;
-        text-align: center;
-        padding: 5px;
-        width: 120px;
-        margin-left: 30px;
-        z-index: 9999999999;
-        margin-top: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    font-weight: 100 !important;
+    border-radius: 10px;
+    text-align: center;
+    padding: 7px;
+  
+    z-index: 9999999999;
+
         color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>
     }
+
   .btn-login {
       
         width: max-content;
@@ -259,19 +257,16 @@ if(isset($question3)){
         ?>
     }
 
-    @media(min-width:100px) and (max-width:720px) {
+    @media(min-width:100px) and (max-width:768px) {
         .timer-back {
-            position: absolute;
+            position: relative;
             font-size: 15px;
             font-weight: 100 !important;
             border-radius: 10px;
             border: 1px solid #ffffff;
             text-align: center;
             padding: 5px;
-            width: 96px;
-            margin-left: -22px;
-            z-index: 9999999999;
-            margin-top: 66px;
+            width: max-content;
             color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -279,21 +274,17 @@ if(isset($question3)){
         }
 
         .score {
-            position: absolute;
+            position: relative;
             font-size: 15px;
             font-weight: 100 !important;
             border-radius: 10px;
             border: 1px solid #ffffff;
             padding: 5px;
-            width: 85px;
+                    width: max-content;
             background-image: none !important;
-            margin-left: 28px;
-            z-index: 9999999999;
-            margin-top: 66px;
-            text-align: right;
-            border: 1px solid #fff;
+            text-align: center;
             float: right;
-            padding: 5px 10px;
+            padding: 7px;
             color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -327,12 +318,11 @@ if(isset($question3)){
         }
 
         .score {
-            position: absolute;
+            position: relative;
             text-align: center;
-            border: 1px solid #fff;
             float: right;
-            padding: 4px 11px;
-            border-radius: 10px;
+            padding: 7px;
+            border-radius: 10px;    
             font-size: 12px;
             z-index: 9999999999;
             margin-top: 7px;
@@ -353,11 +343,11 @@ if(isset($question3)){
     <div class="container-fluid">
         <div class="container-fluid mob-margin" style="margin-top:10px;">
             <div class="row ">
-                <div class="col-sm-4 col-md-4 col-lg-4 col-xs-8" style="display:inline-flex; ">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xs-6" style="display:inline-flex; ">
                     <div class="timer-back" id="timer">Time:00:00</div>
                 </div>
 
-                <div class="col-sm-2 col-md-2 col-lg-2 col-xs-4" style="float:right;">
+                <div class="col-sm-6 col-md-2 col-lg-2 col-xs-6" style="float:right;">
                     <div class="score">Points: <span id="points"><?php echo $score; ?></span></div>
                 </div>
             </div>

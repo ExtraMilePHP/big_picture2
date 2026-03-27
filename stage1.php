@@ -230,54 +230,39 @@ if(!empty($question5) ){
     }
 
     .score {
-        position: absolute;
+        position: relative;
         text-align: center;
-        /* border: 1px solid #fff; */
         float: right;
-        padding: 4px 11px;
+        padding: 7px;
+
         border-radius: 10px;
         font-size: 18px;
         z-index: 9999999999;
-        margin-top: 20px;
         color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>;
-        left: 71px;
-        width: 120px;
+        width: max-content;
     }
 
     .timer-back {
-        position: absolute;
-        font-size: 18px;
-        font-weight: 100 !important;
-        border-radius: 10px;
-        /* border: 1px solid #ffffff; */
-        text-align: center;
-        padding: 5px;
-        width: 120px;
-        margin-left: 30px;
-        z-index: 9999999999;
-        margin-top: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    font-weight: 100 !important;
+    border-radius: 10px;
+    text-align: center;
+    padding: 7px;
+  
+    z-index: 9999999999;
+
         color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>
     }
 
-    /* #timer {
-        width: 150px;
-        background-color: <?php echo $data["landing_page_button_bgcolor"];
-        ?>;
-        color: <?php echo $data["landing_page_title_color"];
-        ?>;
-        text-align: center;
-        margin: 0 auto;
-        border-radius: 8px;
-        padding: 5px;
-        margin-top: 10px;
-        font-size: 18px;
-    } */
 
     .correct-answer {
         background-color: green !important;
@@ -594,36 +579,18 @@ if(!empty($question5) ){
             margin-top: 22px;
         }
 
-        /* #timer {
-            width: 135px;
-            background-color: <?php echo $data["landing_page_button_bgcolor"];
-            ?>;
-            color: <?php echo $data["landing_page_title_color"];
-            ?>;
-            text-align: center;
-            margin: 0 auto;
-            border-radius: 8px;
-            padding: 5px;
-            margin-top: 77px;
-            border: 1px solid white;
-            margin-right: 50px;
-            z-index: 99999;
-        } */
+       
 
         .score {
-            background-color: <?php echo $data["landing_page_button_bgcolor"];
-            ?>;
             float: right;
-            width: 120px;
+            width: max-content;
             font-size: 18px;
-            padding: 5px;
+            padding: 7px;
             text-align: center;
-            margin-top: 77px;
             color: <?php echo $data["landing_page_title_color"];
             ?>;
-            z-index: 99999;
-
-            left: 15px;
+            background-color: <?php echo $data["landing_page_button_bgcolor"];
+            ?>
         }
 
         .hint {
@@ -742,9 +709,9 @@ font-size: 14px;
 }
     }
 
-     @media(min-width:100px) and (max-width:720px) {
+     @media(min-width:100px) and (max-width:768px) {
         .timer-back {
-            position: absolute;
+            position: relative;
             font-size: 15px;
             font-weight: 100 !important;
 
@@ -752,11 +719,8 @@ font-size: 14px;
             /* border: 1px solid #ffffff; */
             text-align: center;
             padding: 5px;
-            width: 97px;
-            margin-left: -22px;
+            width: max-content;
             z-index: 9999999999;
-            margin-top: 66px;
-            z-index: 999;
             color: <?php echo $data["landing_page_title_color"];
             ?>;
             background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -764,21 +728,19 @@ font-size: 14px;
         }
 
         .score {
-            position: absolute;
+            position: relative;
             font-size: 14px;
             font-weight: 100 !important;
 
             border-radius: 10px;
-            /* border: 1px solid #ffffff; */
+        
             padding: 5px;
-            width: 91px;
-            margin-left: 22px;
+            width: max-content;
+           
             z-index: 9999999999;
-            margin-top: 66px;
             text-align: right;
-            z-index: 999;
             float: right;
-            padding: 5px 10px;
+            padding: 7px;
             color: <?php echo $data["landing_page_title_color"];
             ?>;
             background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -799,11 +761,11 @@ font-size: 14px;
 
         <div class="container-fluid mob-margin" style="margin-top:10px;">
             <div class="row ">
-                <div class="col-sm-4 col-md-4 col-lg-4 col-xs-8" style="display:inline-flex; ">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xs-6" style="display:inline-flex; ">
                     <div class="timer-back" id="timer">Time:00:00</div>
                 </div>
 
-                <div class="col-sm-2 col-md-2 col-lg-2 col-xs-4" style="float:right;">
+                <div class="col-sm-6 col-md-2 col-lg-2 col-xs-6" style="float:right;">
                     <div class="score">Points: <span id="points">0</span></div>
                 </div>
             </div>

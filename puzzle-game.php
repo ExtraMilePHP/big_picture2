@@ -123,41 +123,40 @@ $stage = 4;
     }
 
     .score {
-        position: absolute;
-
-        text-align: right;
-        border: 1px solid #fff;
+        position: relative;
+        text-align: center;
         float: right;
-        padding: 4px 11px;
+        padding: 7px;
+
         border-radius: 10px;
         font-size: 18px;
-        margin-right: 25px;
         z-index: 9999999999;
-        margin-top: 20px;
         color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
-        ?>
+        ?>;
+        width: max-content;
     }
 
     .timer-back {
-        position: absolute;
-        font-size: 18px;
-        font-weight: 100 !important;
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    font-weight: 100 !important;
+    border-radius: 10px;
+    text-align: center;
+    padding: 7px;
+  
+    z-index: 9999999999;
 
-        border-radius: 10px;
-        border: 1px solid #ffffff;
-        text-align: center;
-        padding: 5px;
-        width: 120px;
-        margin-left: 30px;
-        z-index: 9999999999;
-        margin-top: 20px;
         color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
-        ?>
+        ?>;
+        width: max-content;
     }
+
 
     @media screen and (min-width:320px) and (max-width:940px) and (orientation:landscape) {
 
@@ -461,9 +460,9 @@ $stage = 4;
     }
 
 
-    @media(min-width:100px) and (max-width:720px) {
+    @media(min-width:100px) and (max-width:768px) {
         .timer-back {
-            position: absolute;
+            position: relative;
             font-size: 15px;
             font-weight: 100 !important;
 
@@ -471,10 +470,7 @@ $stage = 4;
             border: 1px solid #ffffff;
             text-align: center;
             padding: 7px;
-            width: 101px;
-            margin-left: -4px;
-            z-index: 9999999999;
-            margin-top: 45px;
+            width: max-content;
             color: <?php echo $data["landing_page_title_color"];
             ?>;
             background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -482,20 +478,17 @@ $stage = 4;
         }
 
         .score {
-            position: absolute;
+            position: relative;
             font-size: 15px;
             font-weight: 100 !important;
 
             border-radius: 10px;
             border: 1px solid #ffffff;
             padding: 5px;
-            width: 88px;
-            margin-left: 18px;
-            z-index: 9999999999;
-            margin-top: 45px;
-            text-align: right;
+            width: max-content;
+            text-align: center;
             float: right;
-            padding: 5px 10px;
+            padding: 7px;
             color: <?php echo $data["landing_page_title_color"];
             ?>;
             background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -532,17 +525,14 @@ $stage = 4;
         }
 
         .score {
-            position: absolute;
+            position: relative;
             text-align: center;
-            border: 1px solid #fff;
             float: right;
-            padding: 4px 11px;
+            padding: 7px;
             border-radius: 10px;
             font-size: 12px;
             z-index: 9999999999;
-            margin-top: 7px;
-            left: 76px;
-            width: 91px;
+            width: max-content;
         }
 
     }
@@ -583,10 +573,10 @@ $stage = 4;
 
     <div class="container-fluid mob-margin" style="margin-top:10px;">
         <div class="row ">
-            <div class="col-sm-4 col-md-4 col-lg-4 col-xs-8">
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xs-6">
                 <div class="timer-back" id="timer">Time:00:00</div>
             </div>
-            <div class="col-sm-2 col-md-2 col-lg-2 col-xs-4" style="float:right;">
+            <div class="col-sm-6 col-md-2 col-lg-2 col-xs-6" style="float:right;">
                 <div class="score">Points: <span id="points"><?php echo $score; ?></span></div>
             </div>
         </div>

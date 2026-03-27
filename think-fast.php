@@ -125,39 +125,39 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
 <body class="loginbg">
     <style>
     .score {
-        position: absolute;
-        text-align: right;
-        border: 1px solid #fff;
+        position: relative;
+        text-align: center;
         float: right;
-        padding: 4px 11px;
+        padding: 7px;
+
         border-radius: 10px;
         font-size: 18px;
-        margin-right: 25px;
         z-index: 9999999999;
-        margin-top: 20px;
+        color: <?php echo $data["landing_page_title_color"];
+        ?>;
+        background-color: <?php echo $data["landing_page_button_bgcolor"];
+        ?>;
+        width: max-content;
+    }
+
+    .timer-back {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    font-weight: 100 !important;
+    border-radius: 10px;
+    text-align: center;
+    padding: 7px;
+  
+    z-index: 9999999999;
+
         color: <?php echo $data["landing_page_title_color"];
         ?>;
         background-color: <?php echo $data["landing_page_button_bgcolor"];
         ?>
     }
 
-    .timer-back {
-        position: absolute;
-        font-size: 18px;
-        font-weight: 100 !important;
-        border-radius: 10px;
-        border: 1px solid #ffffff;
-        text-align: center;
-        padding: 5px;
-        width: 120px;
-        margin-left: 30px;
-        z-index: 9999999999;
-        margin-top: 20px;
-        color: <?php echo $data["landing_page_title_color"];
-        ?>;
-        background-color: <?php echo $data["landing_page_button_bgcolor"];
-        ?>
-    }
 
 
 
@@ -211,9 +211,9 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
         ?>
     }
 
-    @media(min-width:100px) and (max-width:720px) {
+    @media(min-width:100px) and (max-width:768px) {
         .timer-back {
-            position: absolute;
+            position: relative;
             font-size: 15px;
             font-weight: 100 !important;
 
@@ -221,10 +221,7 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
             border: 1px solid #ffffff;
             text-align: center;
             padding: 5px;
-            width: 97px;
-            margin-left: -22px;
-            z-index: 9999999999;
-            margin-top: 66px;
+            width: max-content;
             color: <?php echo $data["landing_page_title_color"];
             ?>;
             background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -232,20 +229,17 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
         }
 
         .score {
-            position: absolute;
+            position: relative;
             font-size: 14px;
             font-weight: 100 !important;
 
             border-radius: 10px;
             border: 1px solid #ffffff;
             padding: 5px;
-            width: 91px;
-            margin-left: 22px;
-            z-index: 9999999999;
-            margin-top: 66px;
-            text-align: right;
+            width: max-content;
+            text-align: center;
             float: right;
-            padding: 5px 10px;
+            padding: 7px;
             color: <?php echo $data["landing_page_title_color"];
             ?>;
             background-color: <?php echo $data["landing_page_button_bgcolor"];
@@ -301,11 +295,11 @@ include_once "s3/s3_functions.php"; // s3 function for easy upload and get signe
     <div class="container-fluid">
         <div class="container-fluid mob-margin" style="margin-top:10px;">
             <div class="row ">
-                <div class="col-sm-4 col-md-4 col-lg-4 col-xs-8" style="display:inline-flex; ">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xs-6" style="display:inline-flex; ">
                     <div class="timer-back" id="timer">Time:00:00</div>
                 </div>
 
-                <div class="col-sm-2 col-md-2 col-lg-2 col-xs-4" style="float:right;">
+                <div class="col-sm-6 col-md-2 col-lg-2 col-xs-6" style="float:right;">
                     <div class="score">Points: <span id="points"><?php echo $score; ?></span></div>
                 </div>
             </div>
